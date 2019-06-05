@@ -1,0 +1,41 @@
+
+@media (max-width: 767px){
+
+    
+    .container-fluid {
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+        background-color: #ffffff;
+    }
+    .circlrImg {
+        width: 133% !important;
+        height: 622px;
+        margin-left: -87px;
+        border-radius: 22px;
+        border: 1px solid var(--main-primary-color);
+    }
+    .btn-primary2 {
+       
+        margin-left: -27px !important;
+   
+    }
+    .checkbox-custome{
+        margin-left: 71px !important;
+    }
+    .card-body{
+        font-size: 22px;
+        padding: 80px;
+        color: white;
+        opacity: 1;
+    
+      }
+
+      .panel {
+        margin-top: 20px;
+       
+    }
+
+
+        }
