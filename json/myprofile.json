@@ -1,0 +1,90 @@
+{
+    "aboutSelf": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo  commodo. Proin sodales pulvinar sic tempor.Nam fermentum, nulla luctus pharetra vulputate, felis",
+    "basicDetails": {
+        "email": "asd@gmail.com",
+        "primaryMobile": 6666666666,
+        "profileCreatedFor": "Friend",
+        "secondaryMobile": 6666666666
+    },
+
+    "currentAddress": {
+        "address": "ganesh nagar",
+        "city": "Vilaspur",
+        "state": "Maharshtra",
+        "country": "Indian"
+    },
+    "permennetAddress": {
+        "address": "Dhirubai abmbin Bungallow",
+        "city": "Pune",
+        "state": "Maharshtra",
+        "country": "Us"
+    },
+    "educationDetails": {
+        "annualIncome": 7676,
+        "country": "India",
+        "education": "Bachelor of Engineering",
+        "educationDetail": "Computer Science",
+        "employmentType": "Goverment",
+        "occupation": "Software Devolper"
+    },
+
+
+    "familyBackground": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor.Nam fermentum, nulla luctus pharetra vulputate, felis",
+
+    "horoscope": {
+        "dob": "23 Apr  2019 ",
+        "manglik": "yes",
+        "nakshatra": "Ashwini",
+        "placeOfBirth": "Pune",
+        "rashi": "Makar",
+        "time": "06:05"
+    },
+
+    "lifeStyle": {
+        "diet": "Vegetiarien",
+        "drinks": "No",
+        "familyValues": "Modern",
+        "smoke": "No"
+    },
+
+    "personalDetails": {
+        "children": "No",
+        "dob": "Tue Apr 09 2019",
+        "gender": "Male",
+        "maritalStatus": "Never married",
+        "name": "Jhon Rodes",
+        "height": 656,
+        "weight": 5465
+    },
+
+    "religionDetails": {
+        "caste": "Maratha",
+        "motherTongue": "Marathi (Marāṭhī)",
+        "religion": "Hinduism",
+        "community": "Hindi"
+    },
+
+    "health": {
+        "height": 656,
+        "weight": 44,
+        "skinTone": "dasd",
+        "bodyType": "Average",
+        "healthInformation": "Healthy",
+        "disability": "No",
+        "glasses": "Yes"
+    },
+    "location":{
+      "country":"India",
+      "state":"Maharshtra",
+      "city":"Pune"
+    } ,
+    "photos": {
+        "profilePicturePath": "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "photoOne": "https://images.unsplash.com/photo-1519764622345-23439dd774f7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
+        "photoTwo": "https://images.unsplash.com/photo-1526667900883-4a817696e7e8?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
+        "photoThree": "https://images.unsplash.com/photo-1525002267934-d62af40273c8?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
+        "photoFour": "https://images.unsplash.com/photo-1528900403525-dc523d4f18d6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
+       
+
+    }
+}
