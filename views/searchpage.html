@@ -1,0 +1,608 @@
+
+<style>
+   
+    .serach-bar-inside {
+        background-color: white;
+    }
+
+    .row {
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+
+    md-select-value>span {
+        color: #737373bf !important;
+
+    }
+
+    .md-select-value>span:not(.md-select-icon) .md-text {
+        display: inline;
+        color: black;
+    }
+
+    md-select {
+        display: flex;
+        margin: 0px 0px 0px !important;
+    }
+
+
+
+    
+</style>
+<style>
+        
+        
+        #myImg {
+          border-radius: 5px;
+          cursor: pointer;
+          transition: 0.3s;
+        }
+        
+        #myImg:hover {   
+             opacity: 1;
+             transform: initial;
+    }
+       
+        </style>
+    <div class="container-fluid">
+        <div class="row serach-bar-inside" style="    margin-bottom: 12px;">
+        <!-- <center style="color: white;padding: 3px;
+                    font-size: 14px;"><label>Shortlisted Profiles </label>
+                    
+                    </center> -->
+                    <div class="col-sm-4">
+                    <button class="sec-timer-btn md-raised md-primary md-button md-ink-ripple verification-bar-button "
+                    type="button" ng-click="gotoSearchProfile();" style="    min-height: 33px !important;
+                                    margin-top: 15px;
+                                    margin-left: -2px;background-color: #a7a6a6" onclick="window.history.go(-1)"
+                    aria-label="Verify your account"><span class="ng-scope">Back</span>
+                    <div class="md-ripple-container" style=""></div>
+                </button>
+            </div>
+        <div class="col-sm-4">
+
+        </div>
+        <div class="col-sm-4">
+            <div class="form-group">
+                <label for="usr"></label>
+                <input type="text" class="form-control" id="usr" placeholder="Search">
+                <button class="sec-timer-btn md-raised md-primary md-button md-ink-ripple verification-bar-button"
+                    type="button" ng-click="gotoSearchProfile();" style="    min-height: 33px !important;
+                                    margin-top: 0px;
+                                    margin-left: -2px;background-color: var(--main-primary-color);"
+                    aria-label="Verify your account"><span class="ng-scope"><i class="fas fa-search"></i></span>
+                    <div class="md-ripple-container" style=""></div>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="row ">
+        <div class="col-sm-3">
+            <div class="panel" style="height: 550px;
+            overflow-x: scroll;">
+                <div class="filter-header"><label>Filter Search Results</label></div>
+                  <div class="filter-type">
+                    <div class="filter-titile">
+                        <label data-toggle="collapse" data-parent="#accordion" href="#Horoscope" 
+                        aria-expanded="false"  class="collapsed">Profile Photo </label> <i class="fa fa-angle-down"></i></div>
+                    <div class="row filter-body collapse" id="Horoscope" aria-expanded="false">
+                        <div class="col-sm-12">
+                            <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="filter.profilePhoto.all"
+                                class="md-primary">
+                                All</md-checkbox>
+                        </div>
+                        <div class="col-sm-12">
+                            <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="filter.profilePhoto.withPhoto"
+                                class="md-primary">
+                                With profile photos only</md-checkbox>
+                        </div>
+                        <div class="col-sm-12">
+                            <md-checkbox md-no-ink aria-label="Checkbox No Ink"
+                                ng-model="filter.profilePhoto.withoutPhoto" class="md-primary">
+                                Include without profile photos</md-checkbox>
+                        </div>
+                    </div>
+                  </div>
+
+                <div class="filter-type">
+                    <div class="filter-titile"><label >Marital Status </label></div>
+                    <div class="row filter-body">
+                        <div class="col-sm-12">
+                            <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="filter.maritalStatus.all"
+                                class="md-primary">
+                                All</md-checkbox>
+                        </div>
+                        <div class="col-sm-12">
+                            <md-checkbox md-no-ink aria-label="Checkbox No Ink"
+                                ng-model="filter.maritalStatus.neverMarried" class="md-primary">
+                                Never Married</md-checkbox>
+                        </div>
+                        <div class="col-sm-12">
+                            <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="filter.maritalStatus.divorced"
+                                class="md-primary">
+                                Divorced</md-checkbox>
+                        </div>
+                        <div class="col-sm-12">
+                            <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="filter.maritalStatus.widowed"
+                                class="md-primary">
+                                Widowed</md-checkbox>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-type">
+                    <div class="filter-titile"><label>Age</label></div>
+                    <div class="row filter-body">
+                        <div class="col-sm-12">
+                            <md-input-container class="md-block" flex-gt-sm>
+                                <label>From</label>
+                                <md-select ng-model="filter.age.fromAge" style="width: 100%;">
+                                    <md-option value="18">18</md-option>
+                                    <md-option value="20">20</md-option>
+                                    <md-option value="30">30</md-option>
+                                    <md-option value="40">40</md-option>
+                                    <md-option value="50">50</md-option>
+                                    <md-option value="60">60</md-option>
+                                    <md-option value="70">70</md-option>
+                                    <md-option value="80">80</md-option>
+
+                                </md-select>
+                            </md-input-container>
+                        </div>
+                        <div class="col-sm-12">
+                            <md-input-container class="md-block" flex-gt-sm>
+                                <label>To</label>
+                                <md-select ng-model="filter.age.toAge" style="width: 100%;">
+                                    <md-option value="18">18</md-option>
+                                    <md-option value="20">20</md-option>
+                                    <md-option value="30">30</md-option>
+                                    <md-option value="40">40</md-option>
+                                    <md-option value="50">50</md-option>
+                                    <md-option value="60">60</md-option>
+                                    <md-option value="70">70</md-option>
+                                    <md-option value="80">80</md-option>
+
+                                </md-select>
+                            </md-input-container>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="filter-type">
+                    <div class="filter-titile"><label>Religion</label></div>
+                    <div class="row filter-body">
+                        <div class="col-sm-12">
+                            <md-input-container class="md-block" flex-gt-sm>
+                                <label>Religion</label>
+                                <md-select ng-model="filter.realigin" style="width:100%">
+                                    <md-option ng-repeat="r in religionList" value="{{r.name}}">{{r.name}}</md-option>
+                                </md-select>
+                            </md-input-container>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="filter-type">
+                    <div class="filter-titile"><label>Community</label></div>
+                    <div class="row filter-body">
+                        <div class="col-sm-12">
+                            <md-input-container class="md-block" flex-gt-sm>
+                                <label>Community</label>
+                                <md-select ng-model="filter.community" style="width:100%">
+                                    <md-option ng-repeat="r in religionList" value="{{r.name}}">{{r.name}}</md-option>
+                                </md-select>
+                            </md-input-container>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="filter-type">
+                    <div class="filter-titile"><label>Mother Tongue
+
+                        </label></div>
+                    <div class="row filter-body">
+                        <div class="col-sm-12">
+                            <md-input-container class="md-block" flex-gt-sm>
+                                <label>Mother Tongue
+
+                                </label>
+                                <md-select ng-model="filter.motherTongue" style="width:100%">
+                                    <md-option ng-repeat="r in langueageList" value="{{r.name}}">{{r.name}}</md-option>
+                                </md-select>
+                            </md-input-container>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="filter-type">
+                    <div class="filter-titile"><label>Country</label></div>
+                    <div class="row filter-body">
+                        <div class="col-sm-12">
+                            <md-input-container class="md-block" flex-gt-sm>
+                                <label>Country</label>
+                                <md-select ng-model="filter.country" style="width:100%">
+                                    <md-option ng-repeat="r in religionList" value="{{r.name}}">{{r.name}}</md-option>
+                                </md-select>
+                            </md-input-container>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="filter-type">
+                    <div class="filter-titile"><label>State</label></div>
+                    <div class="row filter-body">
+                        <div class="col-sm-12">
+                            <md-input-container class="md-block" flex-gt-sm>
+                                <label>State</label>
+                                <md-select ng-model="filter.state" style="width:100%">
+                                    <md-option ng-repeat="s in StateList" value="{{s.name}}">{{s.name}}</md-option>
+                                </md-select>
+                            </md-input-container>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="filter-type">
+                    <div class="filter-titile"><label>City</label></div>
+                    <div class="row filter-body">
+                        <div class="col-sm-12">
+                            <md-input-container class="md-block" flex-gt-sm>
+                                <label>City</label>
+                                <md-select ng-model="filter.city" style="width:100%">
+                                    <md-option ng-repeat="c in CityList" value="{{c.name}}">{{c.name}}</md-option>
+                                </md-select>
+                            </md-input-container>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="filter-type">
+                    <div class="filter-titile"><label>Education</label></div>
+                    <div class="row filter-body">
+                        <div class="col-sm-12">
+                            <md-input-container class="md-block" flex-gt-sm>
+                                <label>Education</label>
+                                <md-select ng-model="filter.education" style="width:100%">
+                                    <md-option ng-repeat="e in EducationList" value="{{e.name}}">{{e.name}}</md-option>
+                                </md-select>
+                            </md-input-container>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="filter-type">
+                    <div class="filter-titile"><label>Occupation</label></div>
+                    <div class="row filter-body">
+                        <div class="col-sm-12">
+                            <md-input-container class="md-block" flex-gt-sm>
+                                <label>Occupation</label>
+                                <md-select ng-model="filter.occupation" style="width:100%">
+                                    <md-option ng-repeat="r in OccupationList" value="{{r.name}}">{{r.name}}</md-option>
+                                </md-select>
+                            </md-input-container>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="filter-type">
+                    <div class="filter-titile"><label>Annual Income
+
+                        </label></div>
+                    <div class="row filter-body">
+                        <div class="col-sm-12">
+                            <md-input-container class="md-block" flex-gt-sm>
+                                <label>Annual Income
+
+                                </label>
+                                <md-select ng-model="filter.annualIncome" style="width:100%">
+                                    <md-option ng-repeat="r in annualIncomeList" value="{{r.name}}">{{r.name}}
+                                    </md-option>
+                                </md-select>
+                            </md-input-container>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="filter-type">
+                    <div class="filter-titile"><label>Diet </label></div>
+                    <div class="row filter-body">
+                        <div class="col-sm-12">
+                            <md-checkbox md-no-ink aria-label="Checkbox No Ink"
+                                ng-model="filter.diet.all" class="md-primary">
+                                All</md-checkbox>
+                        </div>
+                        <div class="col-sm-12">
+                            <md-checkbox md-no-ink aria-label="Checkbox No Ink"
+                                ng-model="filter.diet.vegeterian" class="md-primary">
+                                Vegeterian</md-checkbox>
+                        </div>
+                        <div class="col-sm-12">
+                            <md-checkbox md-no-ink aria-label="Checkbox No Ink"
+                                ng-model="filter.diet.eggeterian" class="md-primary">
+                                Eggeterian</md-checkbox>
+                        </div>
+                        <div class="col-sm-12">
+                            <md-checkbox md-no-ink aria-label="Checkbox No Ink"
+                                ng-model="filter.diet.nonVeg" class="md-primary">
+                                Non Veg</md-checkbox>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="filter-type">
+                    <div class="filter-titile"><label>Smoking</label></div>
+                    <div class="row filter-body">
+                        <div class="row filter-body">
+                            <div class="col-sm-12">
+                                <md-checkbox md-no-ink aria-label="Checkbox No Ink"
+                                    ng-model="filter.smoking.all" class="md-primary">
+                                    All</md-checkbox>
+                            </div>
+                            <div class="col-sm-12">
+                                <md-checkbox md-no-ink aria-label="Checkbox No Ink"
+                                    ng-model="filter.smoking.nonSmokers" class="md-primary">
+                                    Non Smokers</md-checkbox>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="filter-type">
+                    <div class="filter-titile"><label>Drink
+
+                        </label></div>
+                    <div class="row filter-body">
+                        <div class="col-sm-12">
+                            <md-checkbox md-no-ink aria-label="Checkbox No Ink"
+                                ng-model="filter.maritalStatus.neverMarried" class="md-primary">
+                                All</md-checkbox>
+                        </div>
+                        <div class="col-sm-12">
+                            <md-checkbox md-no-ink aria-label="Checkbox No Ink"
+                                ng-model="filter.maritalStatus.neverMarried" class="md-primary">
+                                Drinks</md-checkbox>
+                        </div>
+                        <div class="col-sm-12">
+                            <md-checkbox md-no-ink aria-label="Checkbox No Ink"
+                                ng-model="filter.maritalStatus.neverMarried" class="md-primary">
+                                Drinks Occassionally</md-checkbox>
+                        </div>
+                        <div class="col-sm-12">
+                            <md-checkbox md-no-ink aria-label="Checkbox No Ink"
+                                ng-model="filter.maritalStatus.neverMarried" class="md-primary">
+                                Never Drinks</md-checkbox>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-9">
+
+
+
+
+
+            <div class="panel" style="min-height: 427px;border-radius: 11px;    padding: 14px;">
+                <div ng-repeat="profile in profiles">
+                       
+                    <div class="row" style="" >
+                        <div class="col-sm-3 imgUp" ng-click="viewImage(profile.photos.profilePicturePath)">
+                             <div class="imagePreview circlrImg you-may-like-pic " data-toggle="modal" data-target="#myModal"
+                                style="background-image: url({{profile.photos.profilePicturePath}});" id="myImg"></div>
+                           
+                                <!-- <div class="demo-image first"
+                                 data-image="{{profile.photos.profilePicturePath}}"
+                                  data-title="Beautiful fields" 
+                                  data-caption="With lots of wheaty puffs. Love those puffs."></div> -->
+
+                            <div class="CheckboxCustom" style="      
+  padding: 10px; padding-left: 0px;">
+                                <md-checkbox ng-model="data.cb1" aria-label="Checkbox 1">
+
+                                </md-checkbox>
+                                <md-checkbox ng-model="data.cb2" aria-label="Checkbox 1">
+
+                                </md-checkbox>
+                                <md-checkbox ng-model="data.cb3" aria-label="Checkbox 1">
+
+                                </md-checkbox>
+                                <md-checkbox ng-model="data.cb4" aria-label="Checkbox 1">
+
+                                </md-checkbox>
+                                <md-checkbox ng-model="data.cb5" aria-label="Checkbox 1">
+
+                                </md-checkbox>
+                            </div>
+                            <div><label>Profile Verified 3 out of 5{{ data.cb1 }}</label>
+                            </div>
+                            <div><label>Profile Created by Self</label>
+                            </div>
+                          
+                        </div>
+
+
+                        <!--    --------------------          2nd block    ----------------------      -->
+                        <div class="col-sm-3 block-boredr">
+                            <div id="name">
+                                <label
+                                    style="color: blue;    font-weight: bold;">{{profile.personalDetails.name}}</label><label
+                                    style="    padding-left: 20px;
+                                font-size: 10px;
+                                ">(Age-25)</label>
+                            </div>
+
+                            <div id="Positiuon">
+                                <label class="story-msg ">{{profile.educationDetails.occupation}}</label>
+                            </div>
+                            <div class="">
+                                <div class="user-info">
+                                    <i class="fas fa-map-marker-alt my-profile-font"></i> <label
+                                        class="my-profile-label"> Lives In
+                                        {{profile.currentAddress.city}}, {{profile.currentAddress.state}}</label>
+                                </div>
+                                <div class="user-info">
+                                    <i class="fas fa-home my-profile-font" aria-hidden="true"></i> <label
+                                        class="my-profile-label">From {{profile.permennetAddress.city}},
+                                        {{profile.permennetAddress.state}}
+
+                                    </label>
+                                </div>
+                                <div class="user-info">
+                                    <i class="far fa-heart my-profile-font"></i><label
+                                        class="my-profile-label">{{profile.personalDetails.maritalStatus}}
+
+                                    </label>
+                                </div>
+                                <div class="user-info">
+                                    <i class="far fa-envelope my-profile-font"></i> <label
+                                        class="my-profile-label">{{profile.basicDetails.email}}</label>
+                                </div>
+                                <div class="user-info">
+                                    <i class="fas fa-mobile-alt my-profile-font"></i> <label
+                                        class="my-profile-label">{{profile.basicDetails.primaryMobile}}</label>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <!--    --------------------          3rd block    ----------------------      -->
+
+                        <div class="col-sm-3 block-boredr" style="padding-top: 72px;">
+                            <div class="row responssive-block">
+                                <div class="col-sm-6 user-info"><label class="my-profile-label">DOB</label> </div>
+                                <div class="col-sm-6 user-info"> <label
+                                        class="my-profile-label">{{profile.personalDetails.dob}}</label> </div>
+                            </div>
+                            <div class="row responssive-block">
+
+                                <div class="col-sm-6 user-info"><label class="my-profile-label">Height</label> </div>
+                                <div class="col-sm-6 user-info"> <label
+                                        class="my-profile-label">{{profile.health.height}}</label> </div>
+                            </div>
+                            <div class="row responssive-block">
+
+                                <div class="col-sm-6 user-info"><label class="my-profile-label">Skin Tone</label> </div>
+                                <div class="col-sm-6 user-info"> <label
+                                        class="my-profile-label">{{profile.health.skinTone}} </label> </div>
+                            </div>
+                            <div class="row responssive-block">
+
+                                <div class="col-sm-6 user-info"><label class="my-profile-label">Body Type</label> </div>
+                                <div class="col-sm-6 user-info"> <label
+                                        class="my-profile-label">{{profile.health.bodyType}}</label> </div>
+
+                            </div>
+                            <div class="row responssive-block">
+
+                                <div class="col-sm-6 user-info"><label class="my-profile-label">Weight</label> </div>
+                                <div class="col-sm-6 user-info"> <label
+                                        class="my-profile-label">{{profile.health.weight}} Kg</label> </div>
+                            </div>
+                        </div>
+
+                        <!--    --------------------          4th block    ----------------------      -->
+
+                        <div class="col-sm-3 block-boredr" style="       padding-top: 72px;">
+                            <div class="row responssive-block">
+                                <div class="col-sm-6 user-info"><label class="my-profile-label">Religion</label> </div>
+                                <div class="col-sm-6 user-info"> <label
+                                        class="my-profile-label">{{profile.religionDetails.religion}}</label> </div>
+                            </div>
+
+                            <div class="row responssive-block">
+                                <div class="col-sm-6 user-info"><label class="my-profile-label">Caste</label> </div>
+                                <div class="col-sm-6 user-info"> <label
+                                        class="my-profile-label">{{profile.religionDetails.caste}}</label> </div>
+                            </div>
+                            <div class="row responssive-block">
+                                <div class="col-sm-6 user-info"><label class="my-profile-label">Community</label> </div>
+                                <div class="col-sm-6 user-info"> <label
+                                        class="my-profile-label">{{profile.religionDetails.community}} </label> </div>
+                            </div>
+                            <div class="row responssive-block">
+                                <div class="col-sm-6 user-info"><label class="my-profile-label"> Mother Tongue</label>
+                                </div>
+                                <div class="col-sm-6 user-info"> <label
+                                        class="my-profile-label">{{profile.religionDetails.motherTongue}}</label> </div>
+                            </div>
+                           
+                        </div>
+                        <div class="saved-icon">
+                            <i class="fas fa-bookmark" ng-show="saved==true;" ng-click="saved=!saved"> <md-tooltip md-direction="left">Shortlisted</md-tooltip></i>
+                            <i class="far fa-bookmark" ng-hide="saved==true;" ng-click="saved=!saved"></i>
+                        </div>
+                    </div>
+                    <div class="row color-bar" style="    min-height: 0px;     margin-bottom: 22px;
+                                ">
+                        <center style="color: white;
+                            font-size: 14px;"><label></label></center>
+                    </div>
+
+                </div>
+                <div class="row ">
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-4"><center style="color: white;padding: 18px;
+                        font-size: 14px;"> <button type="button" 
+                        class="btn btn-primary custom-button-cancel " ng-click="" ui-sref="home.partnerProfile"
+                        data-dismiss="modal">Back</button>
+                        <button type="button" ng-click="partnerSearch()" class="btn btn-primary custom-button">Next</button>
+                    
+                    </center></div>
+                    <div class="col-sm-4"></div>
+
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+  <!-- Modal -->
+   <!-- style="  
+  background: linear-gradient(90deg, rgb(120, 61, 189) 0%, rgb(205, 62, 124) 100%);
+" -->
+  <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content" style="    margin-top: 68px;">
+            <!-- <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Modal Header</h4>
+            </div> -->
+            <div class="modal-body" style="    height: 457px; background: linear-gradient(90deg, rgb(120, 61, 189) 0%, rgb(205, 62, 124) 100%);" >
+                 <div class="inner-border" style="background-color: white"> 
+                    <div class="imagePreview circlrImg you-may-like-pic "
+                     style="    background-image: url({{photoModel}});
+                    margin-left: 12px;
+                    height: 291px;
+                    width: 91%;" id="myImg"></div>
+                      <div style="font-size: 14px;    padding-top: 16px;
+                      text-align: -webkit-center;"><label><b>Emma Rose</b></label></br>
+                          <label>25 year</label>
+                      </div>
+                     </div> 
+                  
+
+
+
+            </div>
+            <!-- <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
